@@ -1,3 +1,11 @@
+//Matt Kawa
+//October 21, 2014
+//	CSE2
+//	Lab 08
+//	More Loops
+
+//changes types of loops
+
 import java.util.Scanner;
 public class MoreLoops{
     public static void main(String[] arg){

@@ -1,3 +1,11 @@
+//Matt Kawa
+//October 24, 2014
+//	CSE2
+//	Lab 09
+//	Methods Program
+
+//uses methods to sort numbers by value
+
 import java.util.Scanner;
 public class Methods {
     public static void main(String[] arg) {

@@ -60,20 +60,32 @@ public class MethodCalls{
         num1 = (int)Math.abs(num1);
         num2 = (int)Math.abs(num2);
         
-        //find length of num2
+        //find length of num1
         String temp = "";
-        temp += num2;
-        int numLength = temp.length();
+        temp += num1;
+        int num1Length = temp.length();
         
-        //multiply num1 by appropriate power of 10, based on length of num2
-        for(int i=0;i<numLength;i++){
-            num1*=10;
-        }
+        //find length of num2
+        String temp2 = "";
+        temp2 += num2;
+        int num2Length = temp2.length();
         
         //"concatenate" numbers
-        num2 += num1;
+        for(int i=0;i<num1Length;i++){
+            num2 += (num1%10)*power10(num2Length);
+            num2Length+=1;
+            num1 = (num1-num1%10)/10;
+        }
         
         return num2;
+    }
+    
+    public static int power10(int exponent){
+        int result = 1;
+        for(int i=0;i<exponent;i++){
+            result*=10;
+        }
+        return result;
     }
 }  
 /*

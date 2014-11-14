@@ -46,7 +46,7 @@ public class lab11{
         
         //print arrays in columns
         for(int i = 0; i<10; i++){
-            System.out.println(inputArray[i] + "    " + reversedArray[i]);
+            System.out.println(inputArray[i] + "\t" + reversedArray[i]);
         }
     }
 }

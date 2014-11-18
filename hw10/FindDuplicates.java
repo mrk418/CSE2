@@ -1,5 +1,5 @@
 //Matt Kawa
-//November 4, 2014
+//November 18, 2014
 //	CSE2
 //	Homework 10
 //	Find Duplicates Program
@@ -13,10 +13,12 @@ public class FindDuplicates {
         int num[] = new int[10];
         String answer = "";
         do {
+            //prompt user for input
             System.out.print("Enter 10 ints- ");
             for (int j = 0; j < 10; j++) {
                 num[j] = scan.nextInt();
             }
+            //build output string based on results of boolean methods
             String out = "The array ";
             out += listArray(num); //return a string of the form "{2, 3, -9}"   
             if (hasDups(num)) {
@@ -42,10 +44,10 @@ public class FindDuplicates {
         } while (answer.equals("Y") || answer.equals("y"));
     }
     
-    public static boolean hasDups(int num[]){
+    public static boolean hasDups(int num[]){ //check for duplicates (any quantity)
         int numDups = 0;
-        for(int i = 0; i<num.length; i++){
-            for(int j = i+1; j<num.length; j++){
+        for(int i = 0; i<num.length; i++){ //take every value
+            for(int j = i+1; j<num.length; j++){ //...and compare to every subsequent value
                 if(num[j]==num[i] && j!=i){
                     return true;
                 }
@@ -54,10 +56,10 @@ public class FindDuplicates {
         return false;
     }
     
-    public static boolean exactlyOneDup(int num[]){
+    public static boolean exactlyOneDup(int num[]){ //check for exactly 1 duplicate
         int numDups = 0;
-        for(int i = 0; i<num.length; i++){
-            for(int j = i+1; j<num.length; j++){
+        for(int i = 0; i<num.length; i++){ //take every value
+            for(int j = i+1; j<num.length; j++){ //...and compare to every subsequent value
                 if(num[j]==num[i] && j!=i){
                     numDups+=1;
                     if(numDups>1){
@@ -73,7 +75,7 @@ public class FindDuplicates {
         }
     }
 
-    public static String listArray(int num[]) {
+    public static String listArray(int num[]) { //construct string to display array
         String out = "{";
         for (int j = 0; j < num.length; j++) {
             if (j > 0) {
